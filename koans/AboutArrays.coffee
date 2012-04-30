@@ -15,24 +15,24 @@ describe 'About Arrays', ->
     expect(array).toEqual([1])
 
     array[1] = 2
-    expect(array).toEqual([1, FILL_ME_IN])
+    expect(array).toEqual([1, 2])
 
     array.push(3)
-    expect(array).toEqual(FILL_ME_IN)
+    expect(array).toEqual([1,2,3])
 
 
   it 'should understand array length', ->
     fourNumberArray = [1, 2, 3, 4]
 
-    expect(fourNumberArray.length).toBe(FILL_ME_IN)
+    expect(fourNumberArray.length).toBe(4)
     fourNumberArray.push(5, 6)
-    expect(fourNumberArray.length).toBe(FILL_ME_IN)
+    expect(fourNumberArray.length).toBe(6)
 
     tenEmptyElementArray = new Array(10)
-    expect(tenEmptyElementArray.length).toBe(FILL_ME_IN)
+    expect(tenEmptyElementArray.length).toBe(10)
 
     tenEmptyElementArray.length = 5
-    expect(tenEmptyElementArray.length).toBe(FILL_ME_IN)
+    expect(tenEmptyElementArray.length).toBe(5)
 
 
   it 'should understand multitype arrays', ->
@@ -45,19 +45,18 @@ describe 'About Arrays', ->
                       [6
                       7]]
 
-    expect(multiTypeArray[0]).toBe(FILL_ME_IN)
-    expect(multiTypeArray[2]).toBe(FILL_ME_IN)
-    expect(multiTypeArray[3]()).toBe(FILL_ME_IN) # Note the parens!
-    expect(multiTypeArray[4].value1).toBe(FILL_ME_IN)
-    expect(multiTypeArray[5][0]).toBe(FILL_ME_IN)
+    expect(multiTypeArray[0]).toBe(0)
+    expect(multiTypeArray[2]).toBe('two')
+    expect(multiTypeArray[4].value1).toBe(4)
+    expect(multiTypeArray[5][0]).toBe(6)
 
 
   it 'should understand array ranges', ->
     range = [1..5]
-    expect(range).toEqual(FILL_ME_IN)
+    expect(range).toEqual([1,2,3,4,5])
 
     sdrawkcab = [3..1]
-    expect(sdrawkcab).toEqual(FILL_ME_IN)
+    expect(sdrawkcab).toEqual([3,2,1])
 
   it 'should understand array comprehension', ->
     array = [1, 2, 3]
@@ -65,7 +64,7 @@ describe 'About Arrays', ->
     for element in array
       accumulator += element
 
-    expect(accumulator).toEqual(FILL_ME_IN)
+    expect(accumulator).toEqual(6)
 
 
   it 'should understand a more compact array comprehension', ->
@@ -73,7 +72,7 @@ describe 'About Arrays', ->
     accumulator = 1
     accumulator += element for element in array
 
-    expect(accumulator).toEqual(FILL_ME_IN)
+    expect(accumulator).toEqual(6)
 
 
   it 'should slice arrays', ->
